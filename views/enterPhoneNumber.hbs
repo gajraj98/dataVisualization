@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <img src="static/images/AK_logo.webp" style="width=30px;height:300px">
+            </div>
+            <div class="text-center">
+                <h3>Change Password</h3>
+                <p>Please enter your register phone number</p>
+            </div>
+            <div class="container mt-4 text-center">
+                <div class="input-group mb-3 mx-auto d-flex justify-content-center">
+                    <!-- Country Code Input -->
+                    <!-- Flag Container -->
+                    <div class="input-group-prepend">
+                        <div id="flag-container"></div>
+                    </div>
+                    <!-- Phone Number Input -->
+                    <div class="row">
+                        <div class="col">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" id="phoneNumber" placeholder="123-456-7890"
+                                aria-label="Phone number">
+                        </div>
+                    </div>
+
+
+                </div>
+                <p>We will send you a one-time SMS message<br>Charges may apply</p>
+                <button type="button" class="btn btn-warning btn-lg" onclick="postNumber()">Enter OTP</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Include jQuery (required for intl-tel-input) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include intl-tel-input CSS and JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+    <!-- Include flag-icon-css for flag icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.6.1/css/flag-icon.min.css">
+    <script src="static/js/enterPhoneNumber.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gmail</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  {{!--
+  <script src="https://d3js.org/d3.v7.min.js"></script> --}}
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+
+<body>
+  {{>topNavBar Name = name}}
+  <div class="container">
+    <div class="row">
+      <div style="margin-left: 1318px;">
+        <button type="button" class="btn btn-primary" style="right: 0;" id="upload-data">Data</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div id="chart-container"></div>
+      </div>
+      <div class="col-md-4">
+        <label for="country-select">Select Country:</label>
+        <select id="country-select">
+          <option value="">All</option>
+          <!-- Add other countries if needed -->
+        </select>
+        <div id="error" style="color: red;"></div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-8">
+        <div id="chart"></div>
+
+      </div>
+      <div class="col-md-4">
+        <div>
+          <label for="topic-select">Select Topic:</label>
+          <select id="topicDropdown" onchange="updateChart()">
+            <option value="">All</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-8">
+        <div id="oilChart"></div>
+      </div>
+      <div class="col-md-4">
+        <div>
+          <label for="country-select">Select Country:</label>
+          <select id="country-select2">
+            <option value="">All</option>
+          </select>
+        </div>
+        <div>
+          <form id="oilChart">
+            Start Year:
+            <input type="number" id="startYearInput" value="2017" />
+            <br>
+            End Year:
+            <input type="number" id="endYearInput" value="2022" />
+            <br>
+            <button type="button" onclick="updateOilChart()">Update Chart</button>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" tabindex="-1" role="dialog" id="upload-data-modal" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title">Upload Data</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="data-file">
+            <input type="file" class="custom-file-input" accept=".json" id="dataFile" oninput="enableUpload()">
+            <label class="custom-file-label" for="dataFile" id="dataFileName">Choose file</label>
+          </div>
+          <a th:href="@{/sample/data.tsv}" target="_blank">Download Sample</a>
+          <br>
+          Rows: <span id="rowCount">0</span>,
+          Processed: <span id="processCount">0</span>,
+          Errors: <span id="errorCount">0</span>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="process-data">Upload</button>
+          <button type="button" class="btn btn-warning" id="download-errors">Download Errors</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Include Bootstrap JS and jQuery -->
+  <!-- Include PapaParse library using CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap JavaScript and dependencies (Popper.js) -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/static/js/index.js" defer></script>
+  <script src="/static/js/index1.js" defer></script>
+  <script src="/static/js/index2.js" defer></script>
+</body>
+
+</html>

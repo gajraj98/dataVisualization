@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+
+<body>
+     <div class="container">
+          <div class="row">
+            <div class="col">
+                <img src="static/images/nitin.jpeg" alt="Profile Picture" class="mx-auto d-block rounded-circle my-3"
+                    style="border-radious:20%;width=40px;height:200px">
+            </div>
+          </div>
+          <div class="row text-center mt-5">
+            <div class="col">
+                <p><strong>Name:</strong>{{name}}</p>
+            </div>
+          </div>
+          <div class="row text-center mt-2">
+            <div class="col">
+                <p><strong>Email:</strong>{{email}}</p>
+            </div>
+          </div>
+          <div class="row text-center mt-2">
+            <div class="col">
+                <p><strong>Phone:</strong>{{phoneNumber}}</p>
+            </div>
+          </div>
+          <div class="row text-center mt-5">
+            <div class="col-md-4">
+               <a href="http://localhost:3000/password-change?phoneNumber={{phoneNumber}}&email={{email}}" type="button" class="btn btn-success" style="margin-left: 100px;">Change Password</a>
+
+            </div>
+            <div class="col-md-4">
+                <a href="http://localhost:3000/logout" type="button" class="btn btn-success" >Logout</a>
+            </div>
+            <div class="col-md-4">
+                <a href="http://localhost:3000/logout" type="button" class="btn btn-success" style="margin-right:100px;">Update Photo</a>
+            </div>
+          </div>
+     </div>
+
+
+    <!-- Include Bootstrap JS and jQuery -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="/static/js/Inbox.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+
+        /* Customize the sidebar background color and text color */
+        .sidebar {
+            /* background-color: #f1f1f1; */
+            color: #333;
+            position: fixed; /* Add this line to make it fixed */
+            top: 0; /* Position at the top */
+            left: 0; /* Position at the left */
+            height: 100%; /* Make it full height */
+            width: 200px; /* Adjust the width as needed */
+            /* Add scroll if content exceeds height */
+        }
+
+        /* Style the sidebar links */
+        .sidebar a {
+            padding: 10px 39px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #333;
+            display: block;
+        }
+
+        /* Change the link color on hover */
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+
+        /* Remove margin on the right */
+        .col-md-10 {
+            margin-left: 100px; /* Adjust this value to match the sidebar's width */
+        }
+        .sidebar1 {
+            background-color: #f1f1f1;
+            color: #333;
+            position: fixed; /* Add this line to make it fixed */
+            height: 100%; /* Make it full height */
+            width: 100%; /* Adjust the width as needed */
+             /* Add scroll if content exceeds height */
+            
+        }
+        .sidebar1 a {
+            padding: 10px 39px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #333;
+            display: block;
+        }
+
+        /* Change the link color on hover */
+        .sidebar1 a:hover {
+            background-color: #ddd;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
